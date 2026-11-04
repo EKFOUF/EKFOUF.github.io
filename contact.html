@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Contact Me</h1>
+
+    <p>Feel free to contact me using the form below.</p>
+
+<form id="contactForm">
+
+    <label>Full Name:</label>
+    <input type="text" id="name">
+    <br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email">
+    <br><br>
+
+    <label>Country:</label>
+    <input type="text" id="country">
+    <br><br>
+
+    <label>Comments:</label>
+    <textarea id="comments"></textarea>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+document.getElementById("contactForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var country = document.getElementById("country").value;
+    var comments = document.getElementById("comments").value;
+
+    if (name.trim() == "" || email.trim() == "" ||
+        country.trim() == "" || comments.trim() == "") {
+        alert("Please fill in all fields!");
+    } else {
+        alert("Form submitted successfully!");
+    }
+};
+</script>
+
+</body>
+</html>
